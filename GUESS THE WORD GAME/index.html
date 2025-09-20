@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guess Word </title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="icon" href="image/iconbar.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div id="game-container">
+    <audio id="backgroundMusic" loop controls class="hidden">
+      <source src="sound/backsound.mp3" type="audio/mpeg">
+      <source src="sound/backsound.wav" type="audio/mpeg">
+    </audio><br>
+    <h1>Guess Word  </h1>
+    <div id="timer" class="hidden">Time left: 60s</div>
+
+    <!-- Pilihan level -->
+    <div id="level-selection">
+      <button onclick="startGame('easy')">Easy</button>
+      <button onclick="startGame('medium')">Medium</button>
+      <button onclick="startGame('hard')">Hard</button>
+    </div>
+
+    <!-- Bagian kotak puzzle -->
+    <div id="puzzle-grid" class="hidden">
+    </div>
+
+    <!-- Petunjuk kata -->
+    <p id="clue" class="hidden">Clue: "Alat untuk membersihkan lantai."</p>
+
+    <!-- Huruf-huruf pilihan -->
+    <div id="letter-circle" class="hidden">
+    </div>
+
+    <!-- Tombol Kirim Jawaban -->
+    <button id="submit-btn" class="hidden">Kirim Jawaban</button>
+    <p id="feedback"></p>
+    <!-- Tombol Kirim Jawaban -->
+    <button id="submit-btn" class="hidden">Kirim Jawaban</button>
+
+    <!-- Tombol Ulangi -->
+    <button id="reset-btn" class="hidden">Ulangi</button>
+
+    <p id="feedback"></p>
+
+    <!-- Tombol Kembali ke Halaman Intro -->
+    <button id="back-btn" onclick="window.location.href='intro.html'">
+      <i class="fas fa-home"></i> <!-- Ikon rumah dari Font Awesome -->
+    </button>
+
+    <button id="music-btn">
+      <i id="music-icon" class="fas fa-music"></i>
+    </button>
+
+  </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

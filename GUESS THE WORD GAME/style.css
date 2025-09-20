@@ -1,0 +1,428 @@
+/* Mengatur font dan warna dasar */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f0f0f0;
+  background-image: url(image/background.png);
+  background-size: cover;
+  color: #333;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+h1 {
+  text-align: center;
+  color: #9d0000;
+  font-family: 'Rocher';
+}
+
+ #watermark {
+      user-select: none;
+      pointer-events: none;
+      font-weight: bold;
+      color: #444;
+    }
+
+#game-container {
+  background-color: rgba(255, 255, 255, 0.15);
+  grid-template-columns: repeat(auto-fit, minmax(50px, 1fr)) backdrop-filter: blur();
+  justify-content: center;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  width: 100%;
+  text-align: center;
+}
+
+.hidden {
+  display: none;
+}
+
+#back-btn {
+  padding: 10px 20px;
+  font-size: 16px;
+  font-family: 'Rocher';
+  background: radial-gradient(100% 100% at 100% 0%, #89E5FF 0%, #5468FF 100%);
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#back-btn:hover {
+  transform: translateY(-0.1em);
+  box-shadow: 0px 4px 6px rgba(45, 35, 66, 0.3);
+}
+
+#back-btn:active {
+  box-shadow: inset 0px 0.1em 0.6em #0a21ca;
+  transform: translateY(0em);
+}
+
+#back-btn i {
+  font-size: 20px;
+  /* Atur ukuran ikon sesuai keinginan */
+  margin-right: 1px;
+  /* Menambahkan jarak antara ikon dan teks jika diperlukan */
+}
+
+
+#music-btn {
+  padding: 10px 20px;
+  font-size: 16px;
+  font-family: 'Rocher';
+  background: radial-gradient(100% 100% at 100% 0%, #89E5FF 0%, #5468FF 100%);
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  display: inline-flex;
+  align-items: center;
+}
+
+#music-btn:hover {
+  transform: translateY(-0.1em);
+  box-shadow: 0px 4px 6px rgba(45, 35, 66, 0.3);
+}
+
+#music-btn:active {
+  box-shadow: inset 0px 0.1em 0.6em #0a21ca;
+  transform: translateY(0em);
+}
+
+#music-btn i {
+  font-size: 20px;
+  margin-right: 1px;
+}
+
+/* Styling untuk tombol pilihan level */
+#level-selection button {
+  font-size: 16px;
+  font-family: 'Rocher';
+  font-palette: --Mint;
+  display: inline-block;
+  outline: 0;
+  border: 0;
+  cursor: pointer;
+  will-change: box-shadow, transform;
+  background: radial-gradient(100% 100% at 100% 0%, #89E5FF 0%, #5468FF 100%);
+  box-shadow: 0px 0.01em 0.01em rgb(45 35 66 / 40%), 0px 0.3em 0.7em -0.01em rgb(45 35 66 / 30%), inset 0px -0.01em 0px rgb(58 65 111 / 50%);
+  padding: 0 2em;
+  margin: 4 0em;
+  border-radius: 0.3em;
+  color: #fff;
+  height: 2.6em;
+  text-shadow: 0 1px 0 rgb(0 0 0 / 40%);
+  transition: box-shadow 0.15s ease, transform 0.15s ease;
+}
+
+#level-selection button:hover {
+  box-shadow: 0px 0.1em 0.2em rgb(45 35 66 / 40%), 0px 0.4em 0.7em -0.1em rgb(45 35 66 / 30%), inset 0px -0.1em 0px #3c4fe0;
+  transform: translateY(-0.1em);
+}
+
+#level-selection button:active {
+  box-shadow: inset 0px 0.1em 0.6em #0a21ca;
+  transform: translateY(0em);
+}
+
+
+/* Atur grid puzzle untuk dapat berubah-ubah sesuai dengan jumlah huruf */
+#puzzle-grid {
+  font-family: 'Rocher';
+  font-palette: --Purples;
+  font-size: 16px;
+  display: flex;
+  justify-content: center;
+  /* Menempatkan grid ke kiri, bisa diganti 'center' untuk tengah */
+  align-items: center;
+  gap: 10px;
+  /* Jarak antar elemen grid */
+  grid-auto-flow: column;
+  /* Alirkan grid secara horizontal */
+}
+
+
+.grid-cell {
+  width: 50px;
+  height: 50px;
+  background-color: #bc6e00;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  font-weight: bold;
+  color: #ffffff;
+  margin: 0;
+  /* Pastikan tidak ada margin tambahan */
+  padding: 5;
+  /* Pastikan tidak ada padding tambahan */
+}
+
+/* Petunjuk kata (clue) */
+#clue {
+  font-size: 18px;
+  font-style: italic;
+  color: #7f8c8d;
+  margin-bottom: 15px;
+}
+
+/* Pilihan huruf */
+#letter-circle {
+  font-family: 'Rocher';
+  font-size: 20px;
+  margin: 15px 0;
+}
+
+.letter {
+  background-color: #e74c3c;
+  color: #fff;
+  padding: 10px;
+  font-size: 20px;
+  margin: 5px;
+  display: inline-block;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.letter:hover {
+  background-color: #c0392b;
+}
+
+/* Tombol Kirim Jawaban */
+#submit-btn {
+  padding: 15px 30px;
+  font-size: 18px;
+  outline: none;
+  border: none;
+  border-radius: 10px;
+  transition: 0.5s;
+  background: #00ff5e;
+  cursor: pointer;
+  color: rgb(1, 97, 6);
+  box-shadow: 0 0 10px #ffffff, inset 0 0 10px #ffffff;
+}
+
+#submit-btn:hover {
+  background-color: #27ae60;
+}
+
+/* Feedback */
+#feedback {
+  margin-top: 15px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  #game-container {
+    max-width: 90%;
+  }
+
+  .letter {
+    padding: 8px;
+    font-size: 18px;
+  }
+
+  #submit-btn {
+    font-size: 16px;
+    padding: 8px 16px;
+  }
+}
+
+/* Tombol Ulangi */
+#reset-btn {
+  font-family: 'Rocher';
+  background-color: #ffb01d;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 18px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-top: 15px;
+  transition: background-color 0.3s;
+}
+
+#reset-btn:hover {
+  background-color: #e67e22;
+}
+
+#home-btn,
+#timer {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  margin-left: 10px;
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #f0f0f0;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+}
+
+#timer:hover {
+  background-color: #e0e0e0;
+}
+
+#timer {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  /* Move to the top-left corner */
+  font-weight: bold;
+  color: #333;
+  background-color: transparent;
+  box-shadow: none;
+  padding: 10px;
+}
+
+#timer {
+  position: absolute;
+  top: 20px;
+  margin-left: 10px;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#timer {
+  left: 20px;
+  /* Pindahkan ke pojok kiri atas */
+  font-weight: bold;
+  color: #333;
+  background-color: transparent;
+}
+
+#timer {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  font-weight: bold;
+  color: #333;
+  background-color: transparent;
+  padding: 10px;
+}
+
+@font-face {
+  font-family: 'Rocher';
+  src: url(https://assets.codepen.io/9632/RocherColorGX.woff2);
+}
+
+@font-palette-values --Grays {
+  font-family: Rocher;
+  base-palette: 9;
+}
+
+@font-palette-values --Purples {
+  font-family: Rocher;
+  base-palette: 6;
+}
+
+@font-palette-values --Mint {
+  font-family: Rocher;
+  base-palette: 7;
+}
+
+.grays {
+  font-palette: --Grays;
+}
+
+.purples {
+  font-palette: --Purples;
+}
+
+.mint {
+  font-palette: --Mint;
+}
+
+@keyframes a {
+  0% {
+    transform: scale(0.7, 1.3);
+  }
+
+  25% {
+    transform: scale(1.3, 0.7);
+  }
+
+  50% {
+    transform: scale(0.7, 1.3);
+  }
+
+  75% {
+    transform: scale(1.3, 0.7);
+  }
+}
+
+#intro-container {
+  background-color: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(5px);
+  border-radius: 10px;
+  padding: 40px 20px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  width: 100%;
+  text-align: center;
+}
+
+#intro-container h1 {
+  color: #9d0000;
+  font-family: 'Rocher';
+}
+
+#intro-container h2 {
+  color: #0066cc;
+  /* Ganti dengan warna yang diinginkan untuk h2 */
+  font-family: 'Rocher';
+  font-size: 1em;
+  /* Ukuran lebih kecil dari h1 */
+  text-align: center;
+  margin-top: 10px;
+}
+
+
+#intro-container p {
+  font-size: 18px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+#start-game-btn {
+  padding: 15px 30px;
+  font-size: 18px;
+  font-family: 'Rocher';
+  background: radial-gradient(100% 100% at 100% 0%, #89E5FF 0%, #5468FF 100%);
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#start-game-btn:hover {
+  transform: translateY(-0.1em);
+  box-shadow: 0px 4px 6px rgba(45, 35, 66, 0.3);
+}
+
+#start-game-btn:active {
+  box-shadow: inset 0px 0.1em 0.6em #0a21ca;
+  transform: translateY(0em);
+}
