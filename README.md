@@ -1,7 +1,7 @@
 # guess-the-word-game
 An exciting word guessing game to practice vocabulary and thinking skills. Guess words from various categories with a unique timer at each level. Suitable for all ages, fun and challenging!
 
-**⚠️ Note: This game requires an active internet connection to play**.
+**⚠️ Note: This game requires an active internet connection to play.**
 
 **🎮 Features:**
   - Multiple word categories with increasing difficulty.
